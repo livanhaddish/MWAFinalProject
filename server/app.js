@@ -3,7 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose =require('mongoose')
 
+const db = "mongodb://password:<<PASSWORD>>@ds135810.mlab.com:35810/mwadb"
+mongoose.connect(db,err =>{
+  if(err){
+    console.error("error"+err)
+  }else{ 
+    console.log('connected to mongodb')
+  }
+})
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -36,6 +45,9 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+app.listen(3090,()=>{
+console.log("server running on");
 });
 
 module.exports = app;
