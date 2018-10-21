@@ -1,10 +1,27 @@
 var express = require('express');
 var router = express.Router();
+const jwt = require('jsonwebtoken')
 const User = require('../model/user')
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+function verifyToken(req, res, next) {
+  if(!req.headers.authorization) {
+    return res.status(401).send('Unauthorized request')
+  }
+  let token = req.headers.authorization.split(' ')[1]
+  if(token === 'null') {
+    return res.status(401).send('Unauthorized request')    
+  }
+  let payload = jwt.verify(token, 'secretKey')
+  if(!payload) {
+    return res.status(401).send('Unauthorized request')    
+  }
+  req.userId = payload.subject
+  next()
+}
+
 router.post('/register', (req, res) => {
   let userData = req.body
   let user = new User(userData)
@@ -18,9 +35,11 @@ router.post('/register', (req, res) => {
     }
   })
 })
+
+
 router.post('/login', (req, res) => {
   let userData = req.body
-  User.findOne({email: userData.email}, (err, user) => {
+  User.findOne({userName: userData.userName}, (err, user) => {
     if (err) {
       console.log(err)    
     } else {

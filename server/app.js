@@ -4,8 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose =require('mongoose')
+const cors = require('cors')
+const jwt = require('jsonwebtoken')
 
-const db = "mongodb://password:<<PASSWORD>>@ds135810.mlab.com:35810/mwadb"
+const db = "mongodb://password:password123@ds135810.mlab.com:35810/mwadb"
 mongoose.connect(db,err =>{
   if(err){
     console.error("error"+err)
@@ -17,7 +19,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
-
+app.use(cors())
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -29,7 +31,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/app', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
