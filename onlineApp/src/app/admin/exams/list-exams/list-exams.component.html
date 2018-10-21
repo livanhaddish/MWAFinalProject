@@ -1,4 +1,13 @@
-<div class="container">
+<div class="row">
+  <div class="col-md-9 mx-auto">
+    <!-- <span class="anchor" id="formLogin"></span> -->
+
+    <!-- form card login -->
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">Questions List</h3>
+      </div>
+      <div class="card-body">
  <table class="table">
  <thead>
    <tr>
@@ -10,30 +19,19 @@
    </tr>
  </thead>
 <tbody>
-  <tr *ngFor="let e of exams; let num = index">
+  <tr *ngFor="let e of exams$ | async; let num = index">
   <td>{{ num+1 }}</td>
-  <td>{{ e }}</td>
-  <td><a class="btn btn-primary">edit</a></td>
-  <td><a class="btn btn-primary">delete</a></td>
+  <td>{{ e.userName }}</td>
+  <td><a routerLink="/admin/exams/edit/{{e._id}}" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-pencil"></span> Edit</a></td>
+  <td><a routerLink="/admin/exams/delete/{{e._id}}" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-remove"></span> Delete 
+  </a></td>
 
   </tr>
 </tbody>
  </table>
-  
-  
-  <!-- <ol>
-    
-    <li >
-      <div class="list"> 
-       <label>{{ e }}</label>
-       <span class="buts">
-       <button class="btn btn-primary">edit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-       <button class="btn btn-primary">delete</button>
-       </span>
-      </div>
-      <br>
-    </li>
-  
-  </ol> -->
-
+  </div>
+  </div>
+  </div>
 </div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{ AuthService} from '../service/auth.service';
+import { identifierModuleUrl } from '@angular/compiler';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -18,4 +19,10 @@ loginUser(){
     err => console.log(err)
   )
 }
+ getUsers(){
+   this._auth.getUsers().subscribe(
+     res => console.log(res),
+     err => console.log(err)
+   )
+ }
 }

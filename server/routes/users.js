@@ -5,6 +5,7 @@ const User = require('../model/user')
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
+
 router.post('/register', (req, res) => {
   let userData = req.body
   let user = new User(userData)
@@ -12,9 +13,9 @@ router.post('/register', (req, res) => {
     if (err) {
       console.log(err)      
     } else {
-      let payload = {subject: registeredUser._id}
-      let token = jwt.sign(payload, 'secretKey')
-      res.status(200).send({token})
+      // let payload = {subject: registeredUser._id}
+      // let token = jwt.sign(payload, 'secretKey')
+      res.status(200).send(registeredUser)
     }
   })
 })
