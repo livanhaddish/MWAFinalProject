@@ -10,15 +10,9 @@ import { GradeStudentComponent } from './admin/students/grade-student/grade-stud
 import { ListStaffsComponent } from './admin/addmission-staff/list-staffs/list-staffs.component';
 import { NewStaffComponent } from './admin/addmission-staff/new-staff/new-staff.component';
 import { EditStaffComponent } from './admin/addmission-staff/edit-staff/edit-staff.component';
-<<<<<<< HEAD
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import{AuthGuard} from'./auth.guard';
-=======
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-
->>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
 const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'login',component:LoginComponent},

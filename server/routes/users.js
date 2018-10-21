@@ -6,7 +6,6 @@ const User = require('../model/user')
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-<<<<<<< HEAD
 function verifyToken(req, res, next) {
   if(!req.headers.authorization) {
     return res.status(401).send('Unauthorized request')
@@ -22,8 +21,6 @@ function verifyToken(req, res, next) {
   req.userId = payload.subject
   next()
 }
-=======
->>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
 
 router.post('/register', (req, res) => {
   let userData = req.body
