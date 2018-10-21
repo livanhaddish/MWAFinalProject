@@ -7,7 +7,7 @@ const mongoose =require('mongoose')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
 
-const db = "mongodb://password:password123@ds135810.mlab.com:35810/mwadb"
+const db = "mongodb://password:<<Password>>@ds135810.mlab.com:35810/mwadb"
 mongoose.connect(db,err =>{
   if(err){
     console.error("error"+err)
