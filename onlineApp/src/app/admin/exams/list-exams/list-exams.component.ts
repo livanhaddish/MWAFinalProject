@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-list-exams',
@@ -6,14 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-exams.component.css']
 })
 export class ListExamsComponent implements OnInit {
-   exams = [];
+   exams$;
+   array;
   //  count = 1;
-  constructor() { 
-    this.exams = ["yahiaghjbkl;lkjhgfxghjkl;'po[0987o6i5uersgdfgncvhjbkl;OP[\9-[p695oi47u654wyreshxfgnmcv,hjkhil/u989p68o67i5erjdhmgcjvkhl/iup'9706p958r5rsjgfmhgcvjkhl/jopu'9y8978", "mera","livan"];
-    // this.count +=1;
+  constructor(private _auth: AuthService) { 
+   this.exams$ = _auth.getUsers();
+   
+    //this.count +=1;
   }
 
   ngOnInit() {
-  }
+  
+}
 
 }
