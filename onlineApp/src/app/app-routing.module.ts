@@ -9,10 +9,13 @@ import { GradeStudentComponent } from './admin/students/grade-student/grade-stud
 import { ListStaffsComponent } from './admin/addmission-staff/list-staffs/list-staffs.component';
 import { NewStaffComponent } from './admin/addmission-staff/new-staff/new-staff.component';
 import { EditStaffComponent } from './admin/addmission-staff/edit-staff/edit-staff.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
+  {path:'login', component:LoginComponent},
   {path:'admin/exams', component:ListExamsComponent},
+
   {path:'admin/exams/new', component:NewExamQuationComponent},
   {path:'admin/exams/edit', component:EditQuationComponent},
   {path:'admin/students', component:ListAdminStudentsComponent},
