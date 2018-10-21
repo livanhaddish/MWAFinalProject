@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose =require('mongoose')
 
-const db = "mongodb://password:<<PASSWORD>>@ds135810.mlab.com:35810/mwadb"
+const db = "mongodb://password:password123@ds135810.mlab.com:35810/mwadb"
 mongoose.connect(db,err =>{
   if(err){
     console.error("error"+err)
