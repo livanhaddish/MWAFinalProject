@@ -7,8 +7,13 @@ export class AuthService {
   
   private _registerUrl = "http://localhost:3090/app/register";
   private _loginUrl = "http://localhost:3090/app/login";
-  private _getUserUrl = "http://localhost:3090/exams"
-  private _getOneUserUrl = "http://localhost:3090/exams/edit"
+  private _getUserUrl = "http://localhost:3090/users"
+  private _studentUrl = "http://localhost:3090/students/register"
+  private _getstudentUrl = "http://localhost:3090/students"
+  private _getexamUrl = "http://localhost:3090/exams"
+  
+  private _setquestiontUrl = "http://localhost:3090/exams/add"
+  
   constructor(private http: HttpClient) {
     
    }
@@ -23,8 +28,17 @@ getUsers(){
   return this.http.get<any>(this._getUserUrl);
 }
 
-// getOneUser(id){
-//   return this.http.get<any>(this._getOneUserUrl);
-// }
+registerStudent(student){
+    return this.http.post<any>(this._studentUrl,student);
+}
 
+getStudents(){
+  return this.http.get<any>(this._getstudentUrl);
+}
+addQuestion(question){
+  return this.http.post<any>(this._setquestiontUrl, question)
+}
+getExams(){
+   return this.http.get<any>(this._getexamUrl);
+}
 }

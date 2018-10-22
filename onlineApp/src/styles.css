@@ -14,6 +14,10 @@ body{
     background-color: blue;
 }
 
+.examtimer{
+    text-align: center;
+}
+
 
 @import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 .login-block{

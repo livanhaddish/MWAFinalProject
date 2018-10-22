@@ -21,6 +21,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { FirstNavBarComponent } from './first-nav-bar/first-nav-bar.component';
+import { ExamPageComponent } from './exam-page/exam-page.component';
+import { RegisterStudentComponent } from './register-student/register-student.component';
+import { StaffHomeComponent } from './staff-home/staff-home.component';
+
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
+import { EndExamComponent } from './end-exam/end-exam.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,10 +44,18 @@ ListExamsComponent,
     GradeStudentComponent,
     BsNavbarComponent,
     RegisterComponent,
-    FirstNavBarComponent
+    FirstNavBarComponent,
+    ExamPageComponent,
+    RegisterStudentComponent,
+    StaffHomeComponent,
+   
+    CountdownTimerComponent,
+   
+    EndExamComponent
 
   ],
   imports: [
+    CountdownTimerModule.forRoot(),
     BrowserModule,
     FormsModule,
     AppRoutingModule,
