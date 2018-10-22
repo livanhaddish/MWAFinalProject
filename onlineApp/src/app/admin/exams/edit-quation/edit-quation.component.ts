@@ -12,7 +12,7 @@ export class EditQuationComponent implements OnInit {
     questions$;
   constructor( private _auth: AuthService,private activatedRoute: ActivatedRoute) {
      let params: any = this.activatedRoute.snapshot.params;
-     this.questions$ = _auth.getUsers();
+     //this.questions$ = _auth.getUsers();
    
     // let x = params.id;
     console.log(this.questions$);

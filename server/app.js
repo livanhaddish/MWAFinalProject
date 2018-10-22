@@ -4,7 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose =require('mongoose')
-const cors = require('cors')
+
 const jwt = require('jsonwebtoken')
 
 const db = "mongodb://password:password123@ds135810.mlab.com:35810/mwadb"

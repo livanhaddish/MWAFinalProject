@@ -17,7 +17,14 @@ export class LoginComponent implements OnInit {
     .subscribe(
       res => {
         localStorage.setItem('token', res.token)
-        this._router.navigate(['/'])
+        console.log(res.token);
+        console.log(res.user);
+        if(res.user.role=="Admin"){
+          this._router.navigate(['/home'])
+        }
+        else{
+        this._router.navigate(['/stafhome'])
+      }
       },
       err => console.log(err)
     ) 
