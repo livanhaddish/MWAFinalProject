@@ -3,7 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose =require('mongoose')
+const mongoose =require('mongoose');
+var express = require('express');
+var path = require('path');
+var nodeMailer = require('nodemailer')
+var bodyParser = require('body-parser');
 
 const jwt = require('jsonwebtoken')
 
@@ -18,9 +22,18 @@ mongoose.connect(db,err =>{
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var examsRouter = require('./routes/exams');
+var sentemail = require('./routes/emai');
 var cors = require('cors');
 var app = express();
 app.use(cors())
+
+
+
+
+
+
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -34,7 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/app', usersRouter);
-
+app.use('/email',sentemail)
 app.use('/exams', examsRouter);
 
 // catch 404 and forward to error handler
