@@ -11,7 +11,7 @@ export class ListExamsComponent implements OnInit {
    array;
   //  count = 1;
   constructor(private _auth: AuthService) { 
-   this.exams$ = _auth.getUsers();
+   //this.exams$ = _auth.getUsers();
    
     //this.count +=1;
   }

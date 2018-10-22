@@ -1,7 +1,7 @@
-/* You can add global styles to this file, and also import other style files
+/* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
 
 body{
     padding: 100px;
@@ -15,7 +15,7 @@ body{
 }
 
 
-@import url("//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css");
+
 .login-block{
     background: #DE6262;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to bottom, #FFB88C, #DE6262);  /* Chrome 10-25, Safari 5.1-6 */
@@ -38,4 +38,4 @@ padding : 50px 0;
 .banner-text{width:70%; position:absolute; bottom:40px; padding-left:20px;}
 .banner-text h2{color:#fff; font-weight:600;}
 .banner-text h2:after{content:" "; width:100px; height:5px; background:#FFF; display:block; margin-top:20px; border-radius:3px;}
-.banner-text p{color:#fff;} */
+.banner-text p{color:#fff;}

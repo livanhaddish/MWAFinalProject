@@ -6,7 +6,6 @@ const User = require('../model/user')
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-<<<<<<< HEAD
 function verifyToken(req, res, next) {
   if(!req.headers.authorization) {
     return res.status(401).send('Unauthorized request')
@@ -22,19 +21,17 @@ function verifyToken(req, res, next) {
   req.userId = payload.subject
   next()
 }
-=======
->>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
 
-router.post('/register', (req, res) => {
+router.post('/register', verifyToken,(req, res) => {
   let userData = req.body
   let user = new User(userData)
   user.save((err, registeredUser) => {
     if (err) {
       console.log(err)      
     } else {
-      // let payload = {subject: registeredUser._id}
-      // let token = jwt.sign(payload, 'secretKey')
-      res.status(200).send(registeredUser)
+      let payload = {subject: registeredUser._id}
+      let token = jwt.sign(payload, 'secretKey')
+      res.status(200).send({token})
     }
   })
 })
@@ -52,9 +49,22 @@ router.post('/login', (req, res) => {
       if ( user.password !== userData.password) {
         res.status(401).send('Invalid Password')
       } else {
+
+        // const token = jwt.sign(
+        //   { email: fetchedUser.email, userId: fetchedUser._id },
+        //   "secret_this_should_be_longer",
+        //   { expiresIn: "1h" }
+        // );
+        // res.status(200).json({
+        //   token: token,
+        //   expiresIn: 3600,
+        //   userId: fetchedUser._id
+        // });
+
+
         let payload = {subject: user._id}
         let token = jwt.sign(payload, 'secretKey')
-        res.status(200).send({token})
+        res.status(200).send({token,user});
       }
     }
   })

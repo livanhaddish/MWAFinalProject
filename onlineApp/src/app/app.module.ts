@@ -25,6 +25,9 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import{ TokenInterceptorService } from'./service/token-interceptor.service';
+import { FirstNavBarComponent } from './first-nav-bar/first-nav-bar.component';
+import { StaffHomeComponent } from './staff-home/staff-home.component';
+import { EmailsentComponent } from './emailsent/emailsent.component';
 
 
 @NgModule({
@@ -32,7 +35,7 @@ import{ TokenInterceptorService } from'./service/token-interceptor.service';
     AppComponent,
 
     //LoginComponent,
-
+    FirstNavBarComponent,
 
  
     ListExamsComponent,
@@ -47,6 +50,8 @@ import{ TokenInterceptorService } from'./service/token-interceptor.service';
     BsNavbarComponent,
     RegisterComponent,
     LoginComponent,
+    StaffHomeComponent,
+    EmailsentComponent,
     
 
   ],

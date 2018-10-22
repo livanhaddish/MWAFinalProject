@@ -12,21 +12,26 @@ import { NewStaffComponent } from './admin/addmission-staff/new-staff/new-staff.
 import { EditStaffComponent } from './admin/addmission-staff/edit-staff/edit-staff.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { EmailsentComponent } from './emailsent/emailsent.component';
 import{AuthGuard} from'./auth.guard';
+import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
+import { StaffHomeComponent } from './staff-home/staff-home.component';
 const routes: Routes = [
-  {path:'register',component:RegisterComponent},
+  {path:'register',component:RegisterComponent,canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
   {path:'', component:HomeComponent},
+  {path:'stafhome', component:StaffHomeComponent},
+  {path:'home',component:BsNavbarComponent},
   {path:'login', component:LoginComponent},
-  {path:'register', component:RegisterComponent},
-  {path:'admin/exams', component:ListExamsComponent},
-  {path:'admin/exams/new', component:NewExamQuationComponent},
-  {path:'admin/exams/edit/:id', component:EditQuationComponent},
-  {path:'admin/students', component:ListAdminStudentsComponent},
-  {path:'admin/students/grade', component:GradeStudentComponent},
-  {path:'admin/admission-staffs', component:ListStaffsComponent},
-  {path:'admin/admission-staffs/new', component:NewStaffComponent},
-  {path:'admin/admission-staffs/edit', component:EditStaffComponent},
+  {path:'send-email',component:EmailsentComponent},
+  {path:'admin/exams', component:ListExamsComponent,canActivate:[AuthGuard]},
+  {path:'admin/exams/new', component:NewExamQuationComponent,canActivate:[AuthGuard]},
+  {path:'admin/exams/edit/:id', component:EditQuationComponent,canActivate:[AuthGuard]},
+  {path:'admin/students', component:ListAdminStudentsComponent,canActivate:[AuthGuard]},
+  {path:'admin/students/grade', component:GradeStudentComponent,canActivate:[AuthGuard]},
+  {path:'admin/admission-staffs', component:ListStaffsComponent,canActivate:[AuthGuard]},
+  {path:'admin/admission-staffs/new', component:NewStaffComponent,canActivate:[AuthGuard]},
+  {path:'admin/admission-staffs/edit', component:EditStaffComponent,canActivate:[AuthGuard]},
 ];
 
 @NgModule({
