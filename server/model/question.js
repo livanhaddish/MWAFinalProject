@@ -5,4 +5,5 @@ const questionSchema = new Schema({
     status:boolean,
     question:String
 })
-module.exports =mongoose.model('question',questionSchema,'questions')
+module.exports =mongoose.model('question',questionSchema,'questions');
+//kkkkkkkkkkkkkkk
