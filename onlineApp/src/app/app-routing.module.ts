@@ -10,23 +10,20 @@ import { GradeStudentComponent } from './admin/students/grade-student/grade-stud
 import { ListStaffsComponent } from './admin/addmission-staff/list-staffs/list-staffs.component';
 import { NewStaffComponent } from './admin/addmission-staff/new-staff/new-staff.component';
 import { EditStaffComponent } from './admin/addmission-staff/edit-staff/edit-staff.component';
-<<<<<<< HEAD
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+import { EmailsentComponent } from './emailsent/emailsent.component';
 import{AuthGuard} from'./auth.guard';
-=======
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { RegisterStudentComponent } from './register-student/register-student.component';
-import { StaffHomeComponent } from './staff-home/staff-home.component';
-import { ExamPageComponent } from './exam-page/exam-page.component';
-import { EndExamComponent } from './end-exam/end-exam.component';
 
->>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
+import { BsNavbarComponent } from './bs-navbar/bs-navbar.component';
+import { StaffHomeComponent } from './staff-home/staff-home.component';
+
 const routes: Routes = [
-  {path:'register',component:RegisterComponent},
+  {path:'register',component:RegisterComponent,canActivate:[AuthGuard]},
   {path:'login',component:LoginComponent},
   {path:'', component:HomeComponent},
+  {path:'stafhome', component:StaffHomeComponent},
+  {path:'home',component:BsNavbarComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
   {path:'signup', component:RegisterStudentComponent},
