@@ -5,17 +5,25 @@
 
       <!-- form card login -->
       <div class="card rounded-0">
-        <div class="card-header">
+        <div class="card-header toheder">
           <h3 class="mb-0">New Question</h3>
         </div>
         <div class="card-body">
           <form class="form">
             <div class="form-group">
+             <textarea class="form-control rounded-0" [(ngModel)]="questionData.question" name="question" required></textarea>
             
-              <textarea class="form-control rounded-0" [(ngModel)]="loginUserData.userName" name="userName" required></textarea>
             </div>
+            <div class="form-group">
+              <input type="text" [(ngModel)]="questionData.status" name="status" class="form-control rounded-0" required>
+              
+             </div>
+             <div class="form-group">
+            <input type="text" [(ngModel)]="questionData.answer" name="answer" class="form-control rounded-0" required>
+ 
+             </div>
            
-            <button type="button" (click)="loginUser()" class="btn btn-success float-right">Save</button>
+            <button type="button" (click)="addQuestion()" class="btn btn-success float-right">Save</button>
           </form>
           <!-- <button type="button" (click)="getUsers()" class="btn btn-success float-right">users</button> -->
         </div>

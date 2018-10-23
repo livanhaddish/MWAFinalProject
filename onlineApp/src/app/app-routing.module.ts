@@ -17,6 +17,10 @@ import{AuthGuard} from'./auth.guard';
 =======
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RegisterStudentComponent } from './register-student/register-student.component';
+import { StaffHomeComponent } from './staff-home/staff-home.component';
+import { ExamPageComponent } from './exam-page/exam-page.component';
+import { EndExamComponent } from './end-exam/end-exam.component';
 
 >>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
 const routes: Routes = [
@@ -25,6 +29,10 @@ const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'register', component:RegisterComponent},
+  {path:'signup', component:RegisterStudentComponent},
+  {path:'staffhome', component:StaffHomeComponent},
+  {path:'exampage', component:ExamPageComponent},
+  {path:'endexam', component:EndExamComponent},
   {path:'admin/exams', component:ListExamsComponent},
   {path:'admin/exams/new', component:NewExamQuationComponent},
   {path:'admin/exams/edit/:id', component:EditQuationComponent},

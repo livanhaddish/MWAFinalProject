@@ -18,6 +18,7 @@ mongoose.connect(db,err =>{
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var examsRouter = require('./routes/exams');
+var studentsRouter = require('./routes/students');
 var cors = require('cors');
 var app = express();
 app.use(cors())
@@ -35,8 +36,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/app', usersRouter);
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
+=======
+app.use('/students', studentsRouter);
+>>>>>>> 499272369374265ca3c6c360b8f87327ba500fd3
 app.use('/exams', examsRouter);
 >>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
 

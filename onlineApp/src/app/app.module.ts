@@ -22,10 +22,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import{ HttpClientModule ,HTTP_INTERCEPTORS} from '@angular/common/http';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { RegisterComponent } from './register/register.component';
+<<<<<<< HEAD
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './auth.guard';
 import{ TokenInterceptorService } from'./service/token-interceptor.service';
 
+=======
+import { FirstNavBarComponent } from './first-nav-bar/first-nav-bar.component';
+import { ExamPageComponent } from './exam-page/exam-page.component';
+import { RegisterStudentComponent } from './register-student/register-student.component';
+import { StaffHomeComponent } from './staff-home/staff-home.component';
+
+import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
+import { CountdownTimerModule } from 'ngx-countdown-timer';
+import { EndExamComponent } from './end-exam/end-exam.component';
+>>>>>>> 499272369374265ca3c6c360b8f87327ba500fd3
 
 @NgModule({
   declarations: [
@@ -46,11 +57,23 @@ import{ TokenInterceptorService } from'./service/token-interceptor.service';
     GradeStudentComponent,
     BsNavbarComponent,
     RegisterComponent,
+<<<<<<< HEAD
     LoginComponent,
     
+=======
+    FirstNavBarComponent,
+    ExamPageComponent,
+    RegisterStudentComponent,
+    StaffHomeComponent,
+   
+    CountdownTimerComponent,
+   
+    EndExamComponent
+>>>>>>> 499272369374265ca3c6c360b8f87327ba500fd3
 
   ],
   imports: [
+    CountdownTimerModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpClientModule,

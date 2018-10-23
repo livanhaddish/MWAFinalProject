@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class ListExamsComponent implements OnInit {
    exams$;
-   array;
+   
   //  count = 1;
   constructor(private _auth: AuthService) { 
    this.exams$ = _auth.getUsers();
