@@ -7,14 +7,35 @@ import { AuthService } from '../service/auth.service';
   styleUrls: ['./exam-page.component.css']
 })
 export class ExamPageComponent implements OnInit {
- public answer1 : String = "yahia";
+ public answerData ={};
   examQuestions$;
 
   constructor(private _auth: AuthService) {
      this.examQuestions$ = _auth.getExams();
   }
+
+  sendAnswer(a){
+    // this.answerData = JSON.parse(a);
+   
+   this._auth.saveAnswer(this.answerData)
+   .subscribe(
+    res => console.log(res),
+    err => console.log(err)
+      
+    
+    
+  )      
+}
+  
     onsubmit(){
-      console.log(this.answer1);
+      this._auth.saveAnswer(this.answerData)
+   .subscribe(
+    res => console.log(res),
+    err => console.log(err)
+      
+    
+    
+  )      
     }
   ngOnInit() {
   }

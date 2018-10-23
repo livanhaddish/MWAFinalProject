@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Questions = require('../model/question');
-
+const Answer = require('../model/answer');
 router.get('/', function(req, res, next) {
     Questions.find({}, (err, questions)=>{
         if(err) throw err;
@@ -32,6 +32,21 @@ router.post('/add', (req, res) => {
         // let payload = {subject: registeredUser._id}
         // let token = jwt.sign(payload, 'secretKey')
         res.status(200).send(newQuestion)
+      }
+    })
+  })
+
+
+  router.post('/answer', (req, res) => {
+    let answerData = req.body
+    let answer = new Answer(answerData)
+    answer.save((err, newanswer) => {
+      if (err) {
+        console.log(err)      
+      } else {
+        // let payload = {subject: registeredUser._id}
+        // let token = jwt.sign(payload, 'secretKey')
+        res.status(200).send(newanswer)
       }
     })
   })

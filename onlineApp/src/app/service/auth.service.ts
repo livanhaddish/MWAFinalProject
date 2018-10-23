@@ -11,7 +11,7 @@ export class AuthService {
   private _studentUrl = "http://localhost:3090/students/register"
   private _getstudentUrl = "http://localhost:3090/students"
   private _getexamUrl = "http://localhost:3090/exams"
-  
+  private _saveanswerUrl = "http://localhost:3090/exams/answer"
   private _setquestiontUrl = "http://localhost:3090/exams/add"
   
   constructor(private http: HttpClient) {
@@ -41,4 +41,10 @@ addQuestion(question){
 getExams(){
    return this.http.get<any>(this._getexamUrl);
 }
+
+saveAnswer(answer){
+  return this.http.post<any>(this._saveanswerUrl,answer);
+
+}
+
 }
