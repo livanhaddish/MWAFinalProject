@@ -21,12 +21,5 @@ router.post('/send-email', function (req, res) {
         html: '<b>NodeJS Email Tutorial</b>' // html body
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-            res.send('index');
-        });
     });
        module.exports=router;

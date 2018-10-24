@@ -39,12 +39,9 @@ app.use('/app', usersRouter);
 <<<<<<< HEAD
 =======
 
-=======
 app.use('/students', studentsRouter);
 >>>>>>> 499272369374265ca3c6c360b8f87327ba500fd3
 app.use('/exams', examsRouter);
->>>>>>> 286bc838434997d9503f79bddd4e62997e881a00
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
