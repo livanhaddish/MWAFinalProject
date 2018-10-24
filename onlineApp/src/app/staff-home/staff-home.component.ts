@@ -11,6 +11,18 @@ export class StaffHomeComponent implements OnInit {
     this.students$ = _auth.getStudents();
    }
 
+
+   deletestudent(id){
+    console.log(id);
+        // const observable = this._auth.deletOneStudent(id)
+        // observable.subscribe(data => {
+          
+          //console.log(data)
+          // this.id=data.id
+          // this.deletedStaff = data
+          //this.router.navigate(['/home/admin/staffs'])
+        //})
+      }
   ngOnInit() {
   }
 

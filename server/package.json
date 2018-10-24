@@ -6,15 +6,19 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.4",
     "debug": "~2.6.9",
+    "dotenv": "^6.1.0",
     "ejs": "~2.5.7",
     "express": "^4.16.4",
     "http-errors": "~1.6.2",
     "jsonwebtoken": "^8.3.0",
+    "mailgun.js": "^2.0.1",
     "mongoose": "^5.3.4",
     "morgan": "~1.9.0",
-    "nodemailer": "^4.6.8"
+    "nodemailer": "^4.6.8",
+    "sails-hook-email": "^0.12.1"
   }
 }

@@ -1,3 +1,60 @@
-<p>
-  edit-staff works!
-</p>
+
+<div class="row">
+  <div class="col-md-7 mx-auto">
+    
+
+    
+    <div class="card rounded-0">
+      <div class="card-header toheder">
+        <h3 class="mb-0">Registration Form</h3>
+      </div>
+      <div class="card-body">
+        <form class="form">
+          <div class="form-group">
+            <label for="">First Name</label>
+            <input type="text" [(ngModel)]="registeredStaff.firstName" name="firstName" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" [(ngModel)]="registeredStaff.lastName" name="lastName" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">email</label>
+            <input type="email" [(ngModel)]="registeredStaff.email" name="email" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">Street</label>
+            <input type="email" [(ngModel)]="registeredStaff.street" name="street" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">City</label>
+            <input type="email" [(ngModel)]="registeredStaff.city" name="city" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">State</label>
+            <input type="email" [(ngModel)]="registeredStaff.state" name="state" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">Country</label>
+            <input type="email" [(ngModel)]="registeredStaff.country" name="country" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label for="">Zip</label>
+            <input type="email" [(ngModel)]="registeredStaff.zip" name="zip" class="form-control rounded-0" required>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" [(ngModel)]="registeredStaff.password" name="password" class="form-control rounded-0"  required>
+          </div>
+          <button type="button" (click)="updateStaff()" class="btn btn-primary float-right">Update</button>
+
+        </form>
+      </div>
+     
+    </div>
+  
+
+  </div>
+
+
+</div>

@@ -13,14 +13,18 @@
    <tr>
      <th>Number</th>
      <th>Question</th>
+     <th>Answer</th>
+     <th></th>
      <th></th>
 
    </tr>
  </thead>
 <tbody>
   <tr *ngFor="let e of exams$ | async; let num = index">
-  <td>{{ num+1 }}</td>
-  <td>{{ e.userName }}</td>
+  <td><h4>{{ num+1 }}</h4></td>
+  <td><h4>{{ e.question }}</h4></td>
+  <td><h4>{{e.answer}}</h4></td>
+
   <td><a routerLink="/admin/exams/edit/{{e._id}}" class="btn btn-info btn-lg">
     <span class="glyphicon glyphicon-pencil"></span> Edit</a></td>
   <td><a routerLink="/admin/exams/delete/{{e._id}}" class="btn btn-info btn-lg">

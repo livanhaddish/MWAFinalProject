@@ -22,4 +22,17 @@ router.post('/register', (req, res) => {
   })
 })
 
+router.delete('/deleteStudent/:id',(req, res) => {
+  let userData = req.body
+  console.log(req.params.id);
+  Student.findOneAndRemove({_id:req.params.id},(err, registeredstaff) => {
+    if (err) {
+      console.log(err)      
+    } else {
+      // let payload = {subject: registeredUser._id}
+      // let token = jwt.sign(payload, 'secretKey')
+      res.status(200).send(registeredstaff)
+    }
+  })
+})
 module.exports = router;

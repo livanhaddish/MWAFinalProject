@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 
 
 //import { LoginComponent } from './login/login.component';
-
+//https://www.npmjs.com/package/ng2-responsive
 import { ListExamsComponent } from './admin/exams/list-exams/list-exams.component';
 import { NewExamQuationComponent } from './admin/exams/new-exam-quation/new-exam-quation.component';
 import { EditQuationComponent } from './admin/exams/edit-quation/edit-quation.component';
@@ -34,6 +34,29 @@ import { RegisterStudentComponent } from './register-student/register-student.co
 import { CountdownTimerComponent } from './countdown-timer/countdown-timer.component';
 import { CountdownTimerModule } from 'ngx-countdown-timer';
 import { EndExamComponent } from './end-exam/end-exam.component';
+import { DeletStaffComponent } from './admin/addmission-staff/delet-staff/delet-staff.component';
+import { DeletStudentComponent } from './delet-student/delet-student.component';
+import { StaffNavComponent } from './staff-nav/staff-nav.component';
+import { StudentsComponent } from './students/students.component';
+import { TestComponent } from './test/test.component';
+// import { ResponsiveModule, ResponsiveConfig } from 'ng2-responsive';
+
+// let config = {
+//   breakPoints: {
+//       xs: {max: 600},
+//       sm: {min: 601, max: 959},
+//       md: {min: 960, max: 1279},
+//       lg: {min: 1280, max: 1919},
+//       xl: {min: 1920}
+//   },
+//   debounceTime: 100 // allow to debounce checking timer
+// };
+
+// export function ResponsiveDefinition(){ 
+//         return new ResponsiveConfig(config);
+// };
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +64,7 @@ import { EndExamComponent } from './end-exam/end-exam.component';
 
     //LoginComponent,
     FirstNavBarComponent,
-
+StudentsComponent,
  
     ListExamsComponent,
     NewExamQuationComponent,
@@ -65,10 +88,14 @@ import { EndExamComponent } from './end-exam/end-exam.component';
    
     CountdownTimerComponent,
    
-    EndExamComponent
-
+    EndExamComponent,
+    DeletStaffComponent,
+    DeletStudentComponent,
+    StaffNavComponent,
+    TestComponent
   ],
   imports: [
+    // ResponsiveModule,
     CountdownTimerModule.forRoot(),
     BrowserModule,
     FormsModule,
@@ -82,7 +109,11 @@ import { EndExamComponent } from './end-exam/end-exam.component';
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi:true
-  }],
+  },
+// {provide: ResponsiveConfig, 
+//   useFactory: ResponsiveDefinition }
+
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

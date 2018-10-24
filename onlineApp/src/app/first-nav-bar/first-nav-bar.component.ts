@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-first-nav-bar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FirstNavBarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router:Router) { }
 
   ngOnInit() {
   }
 
+  logoutUser(){
+    //console.log(localStorage.getItem('token'))
+   
+    
+    localStorage.removeItem('token')
+    this._router.navigate(['/'])
+  }
 }

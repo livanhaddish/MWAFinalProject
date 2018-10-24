@@ -3,12 +3,27 @@ var router = express.Router();
 const Questions = require('../model/question');
 const Answer = require('../model/answer');
 router.get('/', function(req, res, next) {
-    Questions.find({}, (err, questions)=>{
-        if(err) throw err;
-        console.log(questions);
-       res.send(questions);
+  
+  Questions.count().exec(function(err, count){
 
-    })
+    var random = Math.floor(Math.random() * count);
+  
+    Questions.findOne().skip(random).exec(
+      function (err, result) {
+        if(err) throw err;
+        console.log(result);
+       res.send(result);
+        // result is random 
+  
+    });
+  
+  });
+  // Questions.find({}, (err, questions)=>{
+  //       if(err) throw err;
+  //       console.log(questions);
+  //      res.send(questions);
+
+  //   })
 
   });
 //   router.get('/edit/:id', function(req, res, next) {

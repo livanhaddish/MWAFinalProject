@@ -13,11 +13,23 @@ body{
     text-align: right;
     background-color: blue;
 }
-
+.b{
+    text-align: right;
+    font-size: 12px;
+    font-weight: bold;
+}
+.a{
+    width: 100%;
+    border: 2px solid black;
+}
 .examtimer{
-    text-align: center;
+    text-align: right;
 }
 .toheder{
+    background-color: gold;
+}
+.tohed{
+    background-color: bisque;
 }
 #home{
     background-image:url("mum.jpg");
@@ -27,4 +39,31 @@ body{
       }
 #homeh{margin-top: 50px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.scrollbar{
+    height: 500px;
+    overflow: scroll;
+    text-align: justify;
+}
+h1{
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.box{
+    font-weight: bold;  
+}
+div.test{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    text-align: justify;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+.buttonstart{
+    text-align: center;
+
 }

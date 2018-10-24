@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from 'src/app/service/auth.service'
 @Component({
   selector: 'app-list-staffs',
   templateUrl: './list-staffs.component.html',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListStaffsComponent implements OnInit {
 
-  constructor() { }
+  staff$;
+   
+  
+  constructor(private _auth: AuthService) { 
+   this.staff$ = _auth.getStaffs();
+   
+   
+  }
 
   ngOnInit() {
-  }
+  
+}
+
 
 }

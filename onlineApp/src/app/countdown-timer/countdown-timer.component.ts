@@ -14,9 +14,9 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
 
   ngOnInit()    { 
     this.start();
-  //   setTimeout(() => {
-  //     this.router.navigate(['endexam']);
-  // }, 21000);  //5s
+    setTimeout(() => {
+      this.router.navigate(['endexam']);
+  }, 21000);  //5s
   }
   ngOnDestroy() { this.clearTimer(); }
 

@@ -1,25 +1,18 @@
 var express = require('express');
 var router = express.Router();
-var nodeMailer = require('nodemailer')
-var bodyParser = require('body-parser');
+const sgMail = require('@sendgrid/mail');
 
 router.post('/send-email', function (req, res) {
-    let transporter = nodeMailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true,
-        auth: {
-            user: 'livanhadishmwa@gmail.com',
-            pass: 'zpqekmubquyrrerw'
-        }
-    });
-    let mailOptions = {
-        from: '"Krunal Lathiya" livanhadishmwa@gmail.com', // Krunal Lathiya /<xx@gmail.com>/sender address
-        to: req.body.to, // list of receivers
-        subject: req.body.subject, // Subject line
-        text: req.body.body, // plain text body
-        html: '<b>NodeJS Email Tutorial</b>' // html body
-    };
-
+    console.log(req.body);
+sgMail.setApiKey('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');
+const msg = {
+  to: req.body.to,
+  from: 'livanhaddishmwa@gmail.com',
+  subject: req.body.subject,
+  text: 'and easy to do anywhere, even with Node.js',
+  html: '<strong>'+req.body.body+'</strong>',
+};
+sgMail.send(msg);
+ res.send(" this is from server");
     });
        module.exports=router;

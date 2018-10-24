@@ -3,11 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-const mongoose =require('mongoose')
-const cors = require('cors')
-const jwt = require('jsonwebtoken')
+const mongoose =require('mongoose');
+const cors = require('cors');
+const jwt = require('jsonwebtoken');
 
-const db = "mongodb://password:<<Password>>@ds135810.mlab.com:35810/mwadb"
+const db = "mongodb://password:password123@ds135810.mlab.com:35810/mwadb"
 mongoose.connect(db,err =>{
   if(err){
     console.error("error"+err)
@@ -15,11 +15,13 @@ mongoose.connect(db,err =>{
     console.log('connected to mongodb')
   }
 })
+var emailRouter = require('./routes/emai');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var examsRouter = require('./routes/exams');
+var staffsRouter = require('./routes/staffs');
 var studentsRouter = require('./routes/students');
-var cors = require('cors');
+
 var app = express();
 app.use(cors())
 // view engine setup
@@ -35,12 +37,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/app', usersRouter);
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
+app.use('/email', emailRouter);
 app.use('/students', studentsRouter);
->>>>>>> 499272369374265ca3c6c360b8f87327ba500fd3
+app.use('/staffs', staffsRouter);
 app.use('/exams', examsRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

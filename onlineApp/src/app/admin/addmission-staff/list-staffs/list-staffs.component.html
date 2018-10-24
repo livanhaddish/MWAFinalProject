@@ -1,3 +1,43 @@
-<p>
-  list-staffs works!
-</p>
+<div class="examtimer"><a routerLink="/home/admin/staff/new" class="btn btn-info btn-lg">
+  Create New Staff</a></div>
+
+<div class="row">
+    
+  <div class="col-md-9 mx-auto">
+    <!-- <span class="anchor" id="formLogin"></span> -->
+
+    <!-- form card login -->
+    <div class="card rounded-0">
+      <div class="card-header toheder">
+        <h3 class="mb-0">staff List</h3>
+      </div>
+      <div class="card-body">
+ <table class="table">
+ <thead>
+   <tr>
+     <th>Number</th>
+     <th>First Name</th>
+     <th>Last Name</th>
+     <th></th>
+     <th></th>
+
+   </tr>
+ </thead>
+<tbody>
+  <tr *ngFor="let e of staff$ | async; let num = index">
+  <td>{{ num+1 }}</td>
+  <td>{{ e.firstName }}</td>
+  <td>{{ e.lastName }}</td>
+  <td><a routerLink="/home/admin/staffs/edit/{{e._id}}" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-pencil"></span> Edit</a></td>
+  <td><a routerLink="/home/admin/staffs/delete/{{e._id}}" class="btn btn-info btn-lg">
+    <span class="glyphicon glyphicon-remove"></span> Delete 
+  </a></td>
+
+  </tr>
+</tbody>
+ </table>
+  </div>
+  </div>
+  </div>
+</div>
