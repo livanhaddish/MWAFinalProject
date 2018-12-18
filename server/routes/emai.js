@@ -4,7 +4,7 @@ const sgMail = require('@sendgrid/mail');
 
 router.post('/send-email', function (req, res) {
     console.log(req.body);
-sgMail.setApiKey('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');
+sgMail.setApiKey('');
 const msg = {
   to: req.body.to,
   from: 'livanhaddishmwa@gmail.com',
